@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  mysql-container:
+    image: localhost:5000/mysql:latest
+    container_name: mysql-container
+    ports:
+    - 3306:3306
+    networks:
+    - networkapp
+    environment:
+        MYSQL_ROOT_PASSWORD: 123456
+        MYSQL_DATABASE: testdb
+    volumes:
+    - mysql-data:/var/lib/mysql   
+  backend:
+    image: localhost:5000/backimg:latest
+    container_name: backcont
+    ports:
+    - 8080:8080
+    networks:
+    - networkapp
+    depends_on:
+    - mysql-container
+  frontend:
+      image: localhost:5000/frontimg:latest
+      container_name: frontcont
+      ports:
+      - 3000:80
+      networks:
+      - networkapp
+      depends_on:
+      - backend
+volumes:
+  mysql-data:
+    driver: local
+networks:
+  networkapp:
+    driver: bridge

@@ -1,0 +1,16 @@
+
+# exam-role-binding.yaml
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  namespace: exam
+  name: exam-role-binding
+subjects:
+- kind: User
+  name: "<username>"  # Replace with the actual username
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: exam-role
+  apiGroup: rbac.authorization.k8s.io
