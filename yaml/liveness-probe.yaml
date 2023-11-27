@@ -11,11 +11,11 @@ spec:
     image: localhost:5000/backimg:latest
     resources:
       limits:
-        cpu: "500m"  # Adjust the CPU limit based on your requirements
-        memory: "512Mi"  # Adjust the memory limit based on your requirements
+        cpu: "500m"  
+        memory: "512Mi"  
       requests:
-        cpu: "100m"  # Adjust the CPU request based on your requirements
-        memory: "256Mi"  # Adjust the memory request based on your requirements
+        cpu: "100m"  
+        memory: "256Mi"  
     livenessProbe:
       httpGet:
         path: /healthz

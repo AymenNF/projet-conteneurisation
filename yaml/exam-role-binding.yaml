@@ -8,7 +8,7 @@ metadata:
   name: exam-role-binding
 subjects:
 - kind: User
-  name: "<username>"  # Replace with the actual username
+  name: root
   apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: Role
