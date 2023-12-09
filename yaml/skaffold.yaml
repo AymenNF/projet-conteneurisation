@@ -1,0 +1,11 @@
+apiVersion: skaffold/v4beta8
+kind: Config
+metadata:
+  name: skaffold 
+manifests:
+  rawYaml:
+    - backend.yaml
+    - database.yaml
+    - frontend.yaml
+    - namespace.yml
+

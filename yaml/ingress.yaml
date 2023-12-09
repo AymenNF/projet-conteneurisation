@@ -12,7 +12,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: projet-docker.com  
+  - host: projetdocker.com  
     http:
       paths:
       - path: /

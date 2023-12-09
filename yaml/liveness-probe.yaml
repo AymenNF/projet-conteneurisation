@@ -3,12 +3,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-app
+  name: my-app1
   namespace: exam
 spec:
   containers:
   - name: backend
-    image: localhost:5000/backimg:latest
+    image: aymennf/backimg:latest
     resources:
       limits:
         cpu: "500m"  

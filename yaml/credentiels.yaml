@@ -1,0 +1,9 @@
+credentials:
+  root:
+    user: root
+    password: 123456
+    host: "%"
+routerInstances: 1
+serverInstances: 3  
+tls:
+  useSelfSigned: true

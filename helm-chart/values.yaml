@@ -1,0 +1,31 @@
+# values.yaml
+
+backend:
+  replicas: 2
+  image:
+    repository: aymennf/bimg2
+    tag: latest
+  env:
+    MYSQL_ROOT_PASSWORD: MTIzNDU2
+    MYSQL_ROOT_USERNAME: cm9vdA==
+    SPRING_DATASOURCE_URL: jdbc:mysql://mysql-service:3306/testdb?useSSL=false&allowPublicKeyRetrieval=true&allowEmptyPassword=yes&createDatabaseIfNotExist=true&autoReconnect=true
+    SPRING_DATASOURCE_USERNAME: root
+
+database:
+  replicas: 2
+  image:
+    repository: mysql
+    tag: latest
+  env:
+    MYSQL_ROOT_PASSWORD: MTIzNDU2
+    MYSQL_ROOT_USERNAME: cm9vdA==
+    MYSQL_DATABASE: testdb
+
+frontend:
+  replicas: 2
+  image:
+    repository: aymennf/fimg3
+    tag: latest
+
+namespace:
+  name: exam

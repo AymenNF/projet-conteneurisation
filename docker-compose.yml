@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   mysql-container:
-    image: localhost:5000/mysql:latest
+    image: mysql
     container_name: mysql-container
     ports:
     - 3306:3306
@@ -13,7 +13,7 @@ services:
     volumes:
     - mysql-data:/var/lib/mysql   
   backend:
-    image: localhost:5000/backimg:latest
+    image: aymennf/backimg:latest
     container_name: backcont
     ports:
     - 8080:8080
@@ -22,7 +22,7 @@ services:
     depends_on:
     - mysql-container
   frontend:
-      image: localhost:5000/frontimg:latest
+      image: aymennf/frontimg:1.0.0
       container_name: frontcont
       ports:
       - 3000:80
